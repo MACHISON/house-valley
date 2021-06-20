@@ -1,0 +1,558 @@
+html {
+    background-color: rgb(212, 212, 212);
+    /*height: 900px;*/
+}
+
+body {
+    overflow-y: hidden;
+    /* Hide vertical scrollbar */
+    overflow-x: hidden;
+    /* Hide horizontal scrollbar */
+    right: 0;
+}
+
+.title-box {
+    position: absolute;
+    width: 100%;
+    height: 42px;
+    right: 0;
+    top: 0;
+    background-color: lightslategray;
+    position: fixed;
+}
+
+.title {
+    padding-left: 30px;
+    font-size: 30px;
+    padding-top: 5px;
+    text-align: left;
+    color: #042b50;
+}
+
+.map-box {
+    position: absolute;
+    top: 42px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 67%;
+    padding: 0;
+    margin: 0;
+    border-left: solid 2px;
+}
+
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.menu-box {
+    position: absolute;
+    background-color: rgb(212, 212, 212);
+    top: 42px;
+    /* height: 850px;*/
+    width: 33%;
+    right: 0;
+}
+
+
+.sub-menu-box {
+    position: absolute;
+}
+
+.settings {
+    position: absolute;
+    position: fixed;
+    display: flex;
+    width: 33%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    border-radius: 10px;
+    top: 0px;
+}
+
+/*Button description*/
+.dbtn-group .button {
+    background-color: rgb(118, 135, 152);
+    color: lightblue;
+    border: none;
+    outline: none;
+    padding: 12px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    float: left;
+}
+
+.dbtn-group .button:hover {
+    background-color: lightgray;
+    color: gray;
+}
+
+.menu-content {
+    display: none;
+    padding: 50px 20px;
+    height: 100%;
+    font-size: 15px;
+    text-align: center;
+    font-family: helvetica;
+    background-color: lightgray;
+}
+
+
+/* --------------------------Map editing--------------------------------------------------*/
+.map-editor-wrapper {
+    display: flex;
+    min-width: none;
+    width: 100%;
+    padding: 0px 0px;
+}
+
+.map-editor-btn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    background-color: rgb(118, 135, 152);
+    color: white;
+    width: 100%;
+    margin: 4px;
+}
+
+.map-editor-btn:active {
+    background-color: rgb(186, 236, 236);
+    color: gray;
+    text-decoration: none;
+}
+
+.mini-editor {
+    display: none;
+    position: relative;
+    height: inherit;
+    width: 80px;
+    margin-right: 2px;
+    background-color: lightgray;
+}
+
+/*--------------------------------------SEARCHING-BAR----------------------------------------------*/
+.searching-bar {
+    position: absolute;
+    z-index: 1;
+    width: 100px;
+    left: 5px;
+    top: 10px;
+    display: none;
+}
+
+.showSearchBar {
+    max-width: 20%;
+    display: block;
+}
+
+#searching-btn {
+    top: 10px;
+}
+
+/*----------------------------------------MAP-MENU--------------------------------------------------*/
+.v-btn-group button {
+    background-color: #3386c0;
+    /* Green background */
+    border: 1px solid;
+    /* Green border */
+    color: white;
+    /* White text */
+    padding: 10px 10px;
+    /* Some padding */
+    cursor: pointer;
+    /* Pointer/hand icon */
+    width: 50%;
+    /* Set a width if needed */
+    display: block;
+    /* Make the buttons appear below each other */
+    border-radius: 0.4rem;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.v-btn-group button:not(:last-child) {
+    border-bottom: none;
+    /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.v-btn-group button:hover {
+    background-color: rgb(25, 96, 189);
+}
+
+/*------------------------------------LEFT-SIDED-FLOATING-BLOCK----------------------------------------------------*/
+.rounded-rect {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 50px -25px black;
+}
+
+.flex-center {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-center.left {
+    left: 0px;
+}
+
+.sidebar-content {
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    color: gray;
+}
+
+.sidebar-toggle {
+    position: absolute;
+    width: 1.3em;
+    height: 1.3em;
+    overflow: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar-toggle.left {
+    right: -1.5em;
+}
+
+.sidebar-toggle:hover {
+    color: #0aa1cf;
+    cursor: pointer;
+}
+
+.sidebar {
+    top: 120px;
+    transition: transform 1s;
+    z-index: 1;
+    width: 100px;
+    height: 50%;
+}
+
+.left.collapsed {
+    transform: translateX(-95px);
+}
+
+/*-------------------------------------------DRAW-POLYGON---------------------------------------------------------*/
+.calculation-box {
+    height: 55px;
+    width: 70px;
+    position: absolute;
+    top: 20px;
+    left: 5px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    text-align: center;
+    z-index: inherit;
+}
+
+p {
+    font-family: 'Open Sans';
+    margin: 0;
+    font-size: 13px;
+}
+
+.control-btns-poly {
+    padding-top: 50%;
+    top: 80px;
+    width: 30px;
+}
+
+/*-----------------------------------------Basic map interaction---------------------------------------------------*/
+
+.ham {
+    position: absolute;
+    /* keep the hamburger button above everything */
+    /*z-index: 100;*/
+    top: 3.5rem;
+    right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: white solid 1px;
+    background: #6c757d;
+    cursor: pointer;
+    border-radius: 0.4rem;
+}
+
+.xIcon {
+    display: none;
+}
+
+.svgIcon {
+    filter: invert(100%) sepia(100%) saturate(38%) hue-rotate(321deg) brightness(110%) contrast(110%);
+}
+
+label {
+    margin-bottom: 0 !important;
+}
+
+.listing-group {
+    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    position: absolute;
+    top: 100px;
+    right: 10px;
+    z-index: 1;
+    border-radius: 3px;
+    max-width: 20%;
+    color: #fff;
+    transition: transform 0.2s;
+    display: none;
+    margin: 0;
+
+}
+
+.showMenu {
+    max-width: 20%;
+    display: block;
+}
+
+.listing-group input[type='checkbox']:first-child+label {
+    border-radius: 3px 3px 0 0;
+}
+
+.listing-group label:last-child {
+    border-radius: 0 0 3px 3px;
+    border: none;
+}
+
+.listing-group input[type='checkbox'] {
+    display: none;
+}
+
+.listing-group input[type='checkbox']+label {
+    background-color: #6c757d;
+    display: block;
+    cursor: pointer;
+    padding: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.listing-group input[type='checkbox']+label {
+    background-color: #6c757d;
+    text-transform: capitalize;
+}
+
+.listing-group input[type='checkbox']+label:hover,
+.listing-group input[type='checkbox']:checked+label {
+    background-color: #6c757d;
+}
+
+.listing-group input[type='checkbox']:checked+label:before {
+    content: '✔';
+    margin-right: 5px;
+}
+
+
+
+/*------------------------------------------MARKERS-------------------------------------------------*/
+.marker {
+    /*background-image: url('../images/icons/flag-simple.png');
+    background-size: cover;*/
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.clearfix {
+    display: block;
+}
+
+.clearfix:after {
+    content: '.';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+/* Marker tweaks */
+.mapboxgl-popup {
+    padding-bottom: 50px;
+}
+
+.mapboxgl-popup-close-button {
+    position: absolute;
+    right: 10px !important;
+    top: -10px !important;
+    background: rgb(128, 128, 128) !important;
+    border: 0;
+    border-radius: 0 3px 0 0;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.mapboxgl-popup-content {
+    font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
+    padding: 0;
+    width: 180px;
+}
+
+.mapboxgl-popup-content-wrapper {
+    padding: 1%;
+}
+
+.mapboxgl-popup-content h5 {
+    background: gray;
+    color: #fff;
+    margin: 0;
+    display: block;
+    padding: 10px;
+    border-radius: 3px 3px 0 0;
+    font-weight: 700;
+    margin: -10px;
+    margin-bottom: 20px;
+}
+
+.mapboxgl-popup-content h6 {
+    margin: 1px;
+    border: gray;
+    border-width: 2px;
+    border-radius: 2%;
+    display: block;
+    padding: 10px 10px 10px 10px;
+    font-weight: 400;
+}
+
+.mapboxgl-popup-content div {
+    padding: 0px;
+}
+
+.mapboxgl-container .leaflet-marker-icon {
+    cursor: pointer;
+}
+
+.mapboxgl-popup-anchor-top>.mapboxgl-popup-content {
+    margin-top: 15px;
+}
+
+.mapboxgl-popup-anchor-top>.mapboxgl-popup-tip {
+    border-bottom-color: #91c949;
+}
+
+.mapboxgl-popup-content input {
+    background: gray;
+    color: #fff;
+    margin: 0;
+    display: block;
+    padding: 10px;
+    border-radius: 3px 3px 0 0;
+    font-weight: 700;
+    padding-top: -10px;
+    margin: -10px;
+    width: 180px;
+    margin-top: 10px;
+}
+.mapboxgl-popup-content button
+{
+    background: darkgreen;
+    color: #fff;
+    margin: 0;
+    display: block;
+    padding: 5px;
+    border-radius: 3px 3px 0 0;
+    font-weight: 700;
+    margin: -10px;
+    margin-top: 10px;
+}
+
+.mapboxgl-popup-content ::-webkit-input-placeholder { /* Edge */
+    color: white;
+  }
+
+/* Override default control style */
+.mapbox-gl-draw_ctrl-bottom-left,
+.mapbox-gl-draw_ctrl-top-left {
+    margin-left: 0;
+    border-radius: 0 4px 4px 0;
+}
+
+.mapbox-gl-draw_ctrl-top-right,
+.mapbox-gl-draw_ctrl-bottom-right {
+    margin-right: 0;
+    border-radius: 4px 0 0 4px;
+}
+
+
+
+/*---------------Andreea - other buttons-------------------*/
+
+.ptitle {
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-family: Helvetica;
+}
+
+.list {
+    width: 70%;
+    border: 1px;
+    padding: 1em;
+    margin: 0 auto;
+}
+
+.button1 {
+    border: none;
+    color: white;
+    padding: 16px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-family: helvetica;
+}
+
+.button2 {
+    background-color: white;
+    color: black;
+    border: 2px solid #008CBA;
+}
+
+.button2:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
+.active {
+    background-color: #008CBA;
+    color: white;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+.iform {
+    width: 25%;
+    height: 25px;
+}
+
+.iform:focus {
+    background-color: lightblue;
+}
+
+form {
+    text-align: left;
+    padding-left: 15%;
+}
